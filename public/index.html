@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能客服系统</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-left"></div>
+    <div class="ambient ambient-right"></div>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">智能客服</p>
+        <h1>把常见问答、订单查询和人工升级接成一个智能客服。</h1>
+        <p class="lede">
+          这是一个可直接运行的智能客服项目骨架。后端用 OpenAI Responses API 驱动工具调用，前端提供会话保持和快捷提问。
+        </p>
+        <div class="chips" id="samples"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="panel-title">实时对话</p>
+            <p class="panel-subtitle" id="status">正在初始化会话…</p>
+          </div>
+          <button class="ghost-button" id="resetButton" type="button">新会话</button>
+        </div>
+
+        <div class="messages" id="messages"></div>
+
+        <form class="composer" id="chatForm">
+          <label class="composer-label" for="messageInput">请输入客户问题</label>
+          <textarea
+            id="messageInput"
+            name="message"
+            rows="4"
+            placeholder="例如：我的订单 NS-2026-1001 什么时候发货？"
+            required
+          ></textarea>
+          <div class="composer-actions">
+            <p class="hint">提示：先试 FAQ，再试订单号，最后试人工升级。</p>
+            <button class="primary-button" type="submit" id="sendButton">发送</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <div class="message-role"></div>
+        <div class="message-body"></div>
+      </article>
+    </template>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

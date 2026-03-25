@@ -1,0 +1,14 @@
+{
+  "name": "agent-customer-support",
+  "version": "1.0.0",
+  "description": "基于 OpenAI Responses API 的零依赖智能客服示例项目。",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
